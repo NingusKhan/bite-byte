@@ -1,42 +1,89 @@
+/* Root Element */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%; /* Full width */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element’s width/height */
+}
+
+/* Body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
+}
+
+/* Menu Bar */
+.menu-bar {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  height: 10vh; /* Dynamic height based off viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8em; /* Adjust font size to fit within smaller menu bar */
+}
+
+/* Add padding to prevent content overlap with the fixed menu */
+.landing-page, .content-boxes {
+  padding-top: calc(10vh); /* Adjust for menu bar height */
+}
+
+/* Landing Page Main Image */
+.landing-page {
+  background-color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+.main-image {
+  background-color: #ddd;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Content Boxes */
+.content-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 2em;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%; /* Ensure it doesn’t exceed viewport width */
+}
+
+/* Individual Boxes */
+.box {
+  background-color: #ccc;
+  padding: 2em;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content-boxes {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-image {
+    height: 200px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 1280px) {
+  .content-boxes {
+    max-width: 1200px;
+    margin: 0 auto;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
