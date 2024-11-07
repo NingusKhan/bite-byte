@@ -63,3 +63,15 @@ app.listen(port, () => {
     `Example app listening at http://localhost:${port}`
   );
 });
+
+//TE4 addition
+app.post("/signup", registerUser);
+
+app.post("/users", authenticateUser, (req, res) => {
+  const userToAdd = req.body;
+  Users.addUser(userToAdd).then((result) =>
+    res.status(201).send(result)
+  );
+});
+
+app.post("/login", loginUser);
