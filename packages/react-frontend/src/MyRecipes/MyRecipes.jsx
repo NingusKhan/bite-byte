@@ -27,7 +27,7 @@ const MyRecipes = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzNhOTU1YjQ5MTMyM2ZlNDE1NzRjMmYiLCJpYXQiOjE3MzE4OTI1NzEsImV4cCI6MTczMTk3ODk3MX0.2YJVf-gIpbpqB3VNLvP_qGu-5k4mF7eKnAWeP-FnG3E',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzNhOTU1YjQ5MTMyM2ZlNDE1NzRjMmYiLCJpYXQiOjE3MzE5Njk0ODgsImV4cCI6MTczMjA1NTg4OH0.16X2T0Uy7MMhleXeZuEeCxQWONP-Cs1ZbufsLFQX8nw',
         },
         body: JSON.stringify(meal),
       });

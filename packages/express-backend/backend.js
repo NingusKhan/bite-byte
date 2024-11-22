@@ -10,7 +10,7 @@ import User from "./models/user.js";
 import { registerUser, loginUser, authenticateUser } from "./auth.js";
 import jwt from 'jsonwebtoken';
 
-const secret = 'my_actual_secret_key'; // Replace with the backend's TOKEN_SECRET
+const secret = 'your_actual_secret_key'; // Replace with the backend's TOKEN_SECRET (from .env)
 const userId = '673a955b491323fe41574c2f'; // Replace with the correct user ID
 
 const token = jwt.sign(
