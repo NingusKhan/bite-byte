@@ -16,12 +16,12 @@ function MyApp() {
     <div id = "app" className="container-fluid">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/browse" element={<BrowsePage />} />
-        <Route path="/myrecipes" element={<ProtectedRoute><MRPage /></ProtectedRoute>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/newrecipe" element={<MRForm />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/browse" element={<BrowsePage/>} />
+        <Route path="/myrecipes" element={<MRPage/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/newrecipe" element={<MRForm/>} />
       </Routes>
       
     </div>
