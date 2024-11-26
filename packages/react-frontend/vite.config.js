@@ -9,7 +9,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "build",
     rollupOptions: {
       external: [
         'bootstrap/dist/css/bootstrap.min.css',
