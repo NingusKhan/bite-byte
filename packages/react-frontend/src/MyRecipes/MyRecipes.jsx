@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Form from './Form';
@@ -13,7 +12,6 @@ const MyRecipes = () => {
 
   //Navigation to go to the recipe page
   const navigate = useNavigate();
-
   const handleRecipeClick = (recipe) => {
     navigate(`/recipe/${recipe.id}`, { state: { recipe } });
   };
