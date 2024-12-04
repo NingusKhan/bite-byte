@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Form from './Form';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./MyRecipes.css"
@@ -8,6 +9,12 @@ const MyRecipes = () => {
   const host = 'https://bite-byte.azurewebsites.net/'
   //const host = 'http://localhost:8000'
   const token = localStorage.getItem('authToken');
+
+  //Navigation to go to the recipe page
+  const navigate = useNavigate();
+  const handleRecipeClick = (recipe) => {
+    navigate(`/recipe/${recipe.id}`, { state: { recipe } });
+  };
 
   const fetchMeals = async () => {
     try {
@@ -93,6 +100,7 @@ const MyRecipes = () => {
                   <img src={meal.image_url} className="card-img-top" alt={meal.name} />
                   <div className="card-body">
                     <h5 className="card-title">{meal.name}</h5>
+                    <button className="btn btn-primary btn-sm me-2" onClick={() => handleRecipeClick(meal)}> View</button>
                     <button className="btn btn-danger btn-sm" onClick={() => deleteMeal(meal._id)}> Delete</button>
                   </div>
                 </div>
