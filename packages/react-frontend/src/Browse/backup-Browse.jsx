@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Form from './Form';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./browse.css"
 
 const Browse = () => {
