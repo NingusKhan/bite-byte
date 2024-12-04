@@ -22,7 +22,7 @@ function MyApp() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/newrecipe" element={<MRForm/>} />
-        <Route path="/recipe/:id" element={<Recipe />} />
+        {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
       </Routes>
     </div>
   );
