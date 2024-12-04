@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './recipe.css'; 
 
 function Recipe() {
