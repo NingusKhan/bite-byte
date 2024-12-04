@@ -88,7 +88,7 @@ const MyRecipes = () => {
     <div id="browsebody" className="container-fluid">
       <div className="row">
         <div className="col-md-3 bg-light p-4">
-          <h2>Add a Reciepe</h2>
+          <h2>Add a Recipe</h2>
           <Form handleSubmit={addMeal} />
         </div>
 

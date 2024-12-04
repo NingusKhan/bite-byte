@@ -27,7 +27,7 @@ const Form = ({ handleSubmit }) => {
   return (
     <form onSubmit={submitForm}>
       <div className="mb-3">
-        <label htmlFor="mealName" className="form-label">Meal Name</label>
+        <label htmlFor="mealName" className="form-label">Recipe Title</label>
         <input
           type="text"
           id="mealName"
@@ -75,7 +75,7 @@ const Form = ({ handleSubmit }) => {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary">Add Meal</button>
+      <button type="submit" className="btn btn-primary">Add Recipe</button>
     </form>
   );
 };
