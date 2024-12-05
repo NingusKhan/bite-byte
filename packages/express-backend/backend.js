@@ -1,7 +1,6 @@
 // backend.js
 import express from "express";
 import dotenv from "dotenv";
-import fetch from 'node-fetch';
 import mongoose from "mongoose";
 import cors from "cors";
 import recipeService from "./services/recipe_service.js";
