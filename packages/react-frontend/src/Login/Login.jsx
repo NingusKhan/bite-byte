@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./login.css"
 
 function Login(){
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const navigate = useNavigate();
 
   const host = 'https://bite-byte.azurewebsites.net/'
   //const host = 'http://localhost:8000'
   
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError('');
+    setErrorMessage('');
+    setSuccessMessage('');
 
     try {
       const response = await fetch(`${host}/login`, {
@@ -30,16 +35,21 @@ function Login(){
 
       const { token } = await response.json();
       localStorage.setItem('authToken', token);
-      alert('Login successful!');
+      setSuccessMessage('Login successful!');
+      setErrorMessage('');
+      setTimeout(() => navigate('/myrecipes'), 2000);
     } catch (error) {
-      setError(error.message || 'Login failed');
+      setErrorMessage(error.message || 'Incorrect username or password.');
+      setSuccessMessage('');
     }
   };
 
   return (
     <div className="container container-fluid" id="registerbody">
       <h1 className="text-center mb-4" id='login_h1'>Login</h1>
-
+      
+      {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+      {successMessage && <div className="alert alert-success">{successMessage}</div>}
 
       <form onSubmit={handleLogin} className="mx-auto" style={{ maxWidth: '600px' }}>
         <div className="mb-3">
@@ -72,7 +82,7 @@ function Login(){
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100 mt-3">
+        <button type="submit" className="btn btn-primary w-100 mt-3" id='button'>
           Login
         </button>
       </form>

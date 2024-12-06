@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './register.css';
 
@@ -10,6 +11,9 @@ function Register() {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const navigate = useNavigate()
+
   const host = 'https://bite-byte.azurewebsites.net/'
   //const host = 'http://localhost:8000'
 
@@ -124,7 +128,7 @@ function Register() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100 mt-3">
+        <button type="submit" className="btn btn-primary w-100 mt-3" id='button'>
           Register
         </button>
       </form>
