@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "./models/user.js"; 
+import User from "../models/user.js"; 
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
@@ -87,7 +87,7 @@ export function authenticateUser(req, res, next) {
 
 
 export function loginUser(req, res) {
-    const { username, pwd } = req.body; // from form
+    const { username, pwd } = req.body; 
   
     User.findOne({ username })
       .then((user) => {

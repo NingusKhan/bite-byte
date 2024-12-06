@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import recipeService from "./services/recipe_service.js";
-import { registerUser, loginUser, authenticateUser } from "./auth.js";
+import { registerUser, loginUser, authenticateUser } from "./services/auth.js";
 
 const app = express();
 const port = 8000;
