@@ -75,7 +75,7 @@ const Form = ({ handleSubmit }) => {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary">Add Recipe</button>
+      <button type="submit" className="btn btn-primary" id="button">Add Recipe</button>
     </form>
   );
 };

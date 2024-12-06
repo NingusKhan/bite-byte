@@ -96,11 +96,11 @@ const MyRecipes = () => {
           <div id="recipe-cards" className="row">
             {meals.map(meal => (
               <div key={meal.id} className="col-md-4 mb-4">
-                <div className="card">
+                <div className="card" onClick={() => handleRecipeClick(meal)} style={{ cursor: 'pointer' }}>
                   <img src={meal.image_url} className="card-img-top" alt={meal.name} />
                   <div className="card-body">
                     <h5 className="card-title">{meal.name}</h5>
-                    <button className="btn btn-primary btn-sm me-2" onClick={() => handleRecipeClick(meal)}> View</button>
+                    {/* <button className="btn btn-primary btn-sm me-2" onClick={() => handleRecipeClick(meal)}> View</button> */}
                     <button className="btn btn-danger btn-sm" onClick={() => deleteMeal(meal._id)}> Delete</button>
                   </div>
                 </div>
