@@ -66,9 +66,7 @@ function Register() {
         confirmPassword: '',
       });
 
-      setTimeout(() => {
-        window.location.href = '/myrecipes';
-      }, 2000);
+      setTimeout(() => navigate('/myrecipes'), 2000);
     } catch (error) {
       setErrorMessage(error.message || 'Registration failed.');
       setSuccessMessage('');
