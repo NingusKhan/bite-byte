@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 
 function Register() {
@@ -10,8 +11,9 @@ function Register() {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const host = 'https://bite-byte.azurewebsites.net/'
-  //const host = 'http://localhost:8000'
+  const host = 'https://bite-byte.azurewebsites.net/';
+  // const host = 'http://localhost:8000'
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,21 +25,21 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const { username: name, password, confirmPassword } = formData;
-  
+
     if (!name || !password || !confirmPassword) {
       setErrorMessage('All fields are required.');
       setSuccessMessage('');
       return;
     }
-  
+
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.');
       setSuccessMessage('');
       return;
     }
-  
+
     try {
       const response = await fetch(`${host}/register`, {
         method: 'POST',
@@ -46,12 +48,12 @@ function Register() {
         },
         body: JSON.stringify({ username: name, pwd: password }),
       });
-  
+
       if (!response.ok) {
         const message = await response.text();
         throw new Error(message);
       }
-  
+
       const { token } = await response.json();
       localStorage.setItem('authToken', token);
       setSuccessMessage('Registration successful!');
@@ -63,7 +65,7 @@ function Register() {
       });
 
       setTimeout(() => {
-        window.location.href = '/myrecipes';
+        navigate('/myrecipes');
       }, 2000);
     } catch (error) {
       setErrorMessage(error.message || 'Registration failed.');
